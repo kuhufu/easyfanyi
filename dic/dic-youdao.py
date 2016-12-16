@@ -4,10 +4,11 @@
 import http.client
 import json
 import sys
+from urllib import parse
 
 keyfrom = 'easyfanyi'
 key = '1929637537'
-q = sys.argv[1]
+q = parse.quote(sys.argv[1])
 myurl = '/openapi.do'
 myurl = myurl+'?keyfrom='+keyfrom+'&key='+key+'&type=data&doctype=json&version=1.1&q='+q
 httpClient = None

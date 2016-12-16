@@ -7,13 +7,14 @@ import urllib
 import random
 import json
 import sys
+from urllib import parse
 
 appid = '20160922000029057'
 secretKey = '2Dv2Qw9S0e7Z7zz7TrU9'
  
 httpClient = None
 myurl = '/api/trans/vip/translate'
-q = sys.argv[1]
+q = parse.quote(sys.argv[1])
 fromLang = 'en'
 toLang = 'zh'
 salt = random.randint(32768, 65536)
