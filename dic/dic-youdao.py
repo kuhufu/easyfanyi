@@ -6,6 +6,10 @@ import json
 import sys
 from urllib import parse
 
+if len(sys.argv) < 2:
+    print("FORM: dic <world>")
+    sys.exit(0)
+    
 keyfrom = 'easyfanyi'
 key = '1929637537'
 q = parse.quote(sys.argv[1])
