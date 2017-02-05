@@ -8,7 +8,7 @@ import sys
 from urllib import parse
 
 if len(sys.argv) < 2:
-    print("FORM: dic <world>")
+    print("Usage: dic <world>")
     sys.exit(0)
     
 keyfrom = 'easyfanyi'
