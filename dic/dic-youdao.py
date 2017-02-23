@@ -2,9 +2,9 @@
 # coding=utf8
 # pylint: disable=C0103
 
-import http.client
-import json
 import sys
+import json
+import http.client
 from urllib import parse
 
 if len(sys.argv) < 2:
@@ -14,8 +14,7 @@ if len(sys.argv) < 2:
 keyfrom = 'easyfanyi'
 key = '1929637537'
 q = parse.quote(sys.argv[1])
-myurl = '/openapi.do'
-myurl = myurl + '?keyfrom=' + keyfrom + '&key=' + \
+myurl = '/openapi.do?keyfrom=' + keyfrom + '&key=' + \
         key + '&type=data&doctype=json&version=1.1&q=' + q
 httpClient = None
 
