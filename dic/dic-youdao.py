@@ -22,17 +22,14 @@ httpClient = None
 try:
     httpClient = http.client.HTTPConnection('fanyi.youdao.com')
     httpClient.request('GET', myurl)
-
-    # response是HTTPResponse对象
     response = httpClient.getresponse()
-    data = response.read().decode('utf8')
-    data = json.loads(data)
-    if len(sys.argv) == 3:
-        print(data['basic']['us-phonetic'])
-    explains = data['basic']['explains']
-    for x in explains:
-        print(x)
+    data = response.read().decode()
+    basic = json.loads(data)['basic']
 
+    if len(sys.argv) == 3:
+        print(basic['us-phonetic'])   
+    for x in basic['explains']:
+        print(x)
 except Exception as e:
     print(e)
 finally:
