@@ -26,7 +26,7 @@ try:
     basic = json.loads(data)['basic']
 
     if len(sys.argv) == 3:
-        print(basic['us-phonetic'])   
+        print(basic['us-phonetic'])
     for x in basic['explains']:
         print(x)
 except Exception as e:
